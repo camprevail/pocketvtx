@@ -35,5 +35,4 @@ If you wish to change the default pin, you can edit the included source code, or
   
 ![](img/6-2.jpg)  
 ![](img/10.jpg)  
-![](img/8.jpg)  
-![](img/9.jpg) 
+![](img/8-9.jpg)
