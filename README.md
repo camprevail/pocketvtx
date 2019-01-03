@@ -1,5 +1,5 @@
 # pocketvtx
-Based off of mon's popular pocket voltex controller, I'm offering an alternative with a dual-color 3d printed case! 
+Based off of mon's popular pocket voltex controller, I'm offering an alternative with a dual-color 3D printed case! 
 
 ![](img/1.jpg)
 
