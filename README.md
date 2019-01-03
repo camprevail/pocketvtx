@@ -4,6 +4,7 @@ Based off of mon's popular pocket voltex controller, I'm offering an alternative
 ![](img/1.jpg)
 
 ## Features
+- Small enough to fit in your hand - Appx 7" x 4", and only 3/4" high (About 1-1/2" including knobs)
 - Made to order:
   - Choose the base color and the wings color, I will send you a render before it's printed. 
   - Optional name laser engraving  on the bottom; will come standard with a Maxima engraving. 
