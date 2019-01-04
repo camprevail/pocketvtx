@@ -28,10 +28,10 @@ The macro key sends a numpad keyboard sequence of +1234 by default.
 
 ### Misc Notes
 I tried multiple materials for the bottom (rubber feet, mousepad material, etc), but the grippy pad I found turned out to be perfect size.  
-Give the controller a good press down on the table for maximum effect. It won't slide around, and it still pulls up very easy.  
+Give the controller a good press down on the table for maximum grip. It won't slide around, and it still pulls up very easy.  
 If the bottom of the pad becomes dirty, simply rinse it under water!  
   
-If you wish to change the default pin, you can edit the included source code, or I can set your pin before I ship it.  
+If you wish to change the default pin number for the macro key, you can edit the included source code, or I can set your pin before I ship it.  
   
   
 ![](img/6-2.jpg)  
