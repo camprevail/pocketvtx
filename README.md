@@ -37,3 +37,4 @@ If you wish to change the default pin number for the macro key, you can edit the
 ![](img/6-2.jpg)  
 ![](img/10.jpg)  
 ![](img/8-9.jpg)
+![](img/White-Blue.jpg)
