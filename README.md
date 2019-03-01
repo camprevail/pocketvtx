@@ -10,7 +10,7 @@ Based off of mon's popular pocket voltex controller, I'm offering an alternative
   - Optional name laser engraving  on the bottom; will come standard with a Maxima engraving. 
 
 - Polished aluminum knobs mounted on Bourns encoders
-- Cherry MX Red switches with blue o-rings to shorten travel
+- Gateron Red switches with blue o-rings to shorten travel
 - G20 blank keycaps
 - Multi-function Macro key (card in/input pin/numpad_6 shortcut)
 - Washable grippy pad with micro-suction technology. 
