@@ -3,6 +3,7 @@ Based off of mon's popular pocket voltex controller, I'm offering an alternative
 
 ![](img/1.jpg)
 ![](img/renders.JPG)  
+High res renders available here: https://photos.app.goo.gl/bC4ZNHQHwgaDdzKu6
 
 ## Features
 - Small enough to fit in your hand - Appx 7" x 4", and only 3/4" high (About 1-1/2" including knobs)
