@@ -2,6 +2,7 @@
 Based off of mon's popular pocket voltex controller, I'm offering an alternative with a dual-color 3D printed case! 
 
 ![](img/1.jpg)
+![](img/renders.JPG)  
 
 ## Features
 - Small enough to fit in your hand - Appx 7" x 4", and only 3/4" high (About 1-1/2" including knobs)
@@ -38,3 +39,4 @@ If you wish to change the default pin number for the macro key, you can edit the
 ![](img/10.jpg)  
 ![](img/8-9.jpg)
 ![](img/White-Blue.jpg)
+![](img/colors.jpg)  
