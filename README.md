@@ -28,7 +28,7 @@ The macro key sends a numpad keyboard sequence of +1234 by default.
 - Press macro once to card in, and again to insert your pin once the pin screen loads.  
 *Additional Functions*  
 - Start + Macro = top row [6]; use to save your rate multiplier before the song starts.  
-- Start + BTN-A+B+C+D + FX-L+R = /[equals]; map this to the test button.  
+- Start + BTN-A+B+C+D + FX-L+R = [equals]; map this to the test button.  
 **Spice is recommended for this! Use "Set Naive" and press equals on your keyboard. Set both keypads to None to accept keypad input from any device.**
 
 ### Misc Notes
