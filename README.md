@@ -24,6 +24,9 @@ The code is a variant of 4yn/iivx (https://github.com/4yn/iivx).
 
 **May 2019 Update** *Changed numpad functions to top row numbers instead.*
 
+You can customize and upload code to the arduino by downloading the free Arduino IDE. https://www.arduino.cc/en/Main/Software
+Select Arduino Leonardo as the board, select the port, and press Ctrl+U to upload. 
+
 The macro key sends a numpad keyboard sequence of +1234 by default.  
 - Press macro once to card in, and again to insert your pin once the pin screen loads.  
 *Additional Functions*  
