@@ -11,6 +11,8 @@ iivxReport_t report;
 int old_macroButtonState = HIGH;
 int old_startButtonState = HIGH;
 int old_state = 0;
+int old_Button1State = HIGH;
+int old_Button2State = HIGH;
 uint8_t buttonCount = 7;
 uint8_t macropin = 16;
 uint8_t lightMode = 0;
@@ -30,7 +32,7 @@ uint8_t ledPins[] = {15, 15, 15, 15, 15, 15, 15, 15, 15};
 
 #define ENCODER_SENSITIVITY (double) 0.375
 // encoder sensitivity = number of positions per rotation times 4 (24*4) / number of positions for HID report (256)
-Encoder encL(0, 1), encR(3, 2);
+Encoder encL(2, 3), encR(1, 0);
 /*
    connect encoders
    VOL-L to pins 0 and 1
@@ -49,6 +51,7 @@ void lights(uint8_t lightDesc) {
 
 void setup() {
 //Serial.begin(9600);
+// while (!Serial) ;
   
   delay(1000);
   // Setup I/O for pins
@@ -59,8 +62,12 @@ void setup() {
     pinMode(macropin, INPUT_PULLUP);
   //  pinMode(sysPin,INPUT_PULLUP);
   //setup interrupts
-}
 
+
+// if (digitalRead(9) == HIGH && (digitalRead(10) == HIGH)) {
+ // Serial.print("Both pins are high");
+// }
+}
 void loop() {
   // Read buttons
   for (int i = 0; i < buttonCount; i++) {
@@ -81,68 +88,117 @@ void loop() {
   }
 
 /* 
- *  KEYPAD ASCII CODES
-  220 Keypad /
-  221 Keypad *
-  222 Keypad -
-  223 Keypad +
-  224 Keypad ENTER
-  225 Keypad 1 and End
-  226 Keypad 2 and Down Arrow
-  227 Keypad 3 and PageDn
-  228 Keypad 4 and Left Arrow
-  229 Keypad 5
-  230 Keypad 6 and Right Arrow
-  231 Keypad 7 and Home
-  232 Keypad 8 and Up Arrow
-  233 Keypad 9 and PageUp
-  234 Keypad 0 and Insert
-  235 Keypad . and Delete
+   ------- KEYBOARD ASCII CODES -------
+  Top row keys: (use these if you don't have a numpad on your pc)
+  48 - 0
+  49 - 1
+  50 - 2
+  51 - 3
+  52 - 4
+  53 - 5
+  54 - 6
+  55 - 7
+  56 - 8
+  57 - 9
+  45 - - (minus)(default service button)
+  61 - = (equals)(default test button)
+  8 - backspace
+  
+  
+  220 NumPad /
+  221 NumPad *
+  222 NumPad -
+  223 NumPad +
+  224 NumPad ENTER
+  225 NumPad 1 and End
+  226 NumPad 2 and Down Arrow
+  227 NumPad 3 and PageDn
+  228 NumPad 4 and Left Arrow
+  229 NumPad 5
+  230 NumPad 6 and Right Arrow
+  231 NumPad 7 and Home
+  232 NumPad 8 and Up Arrow
+  233 NumPad 9 and PageUp
+  234 NumPad 0 and Insert
+  235 NumPad . and Delete
   */
 
 int macroButtonState = digitalRead(macropin);
 int startButtonState = digitalRead(4);
+int Button1State = digitalRead(5);
+int Button2State = digitalRead(6);
 
 // Press Start + Macro to send numpad_6
 if (macroButtonState != old_macroButtonState) { //compare the button states (from StateChangeDetection Example)
   if (digitalRead(macropin) == LOW) { //if macro button is pressed
       if (digitalRead(4) == LOW){ // if start button is pressed
       Keyboard.begin();
-      Keyboard.press(230); //numpad_6
-      delay(40);
-      Keyboard.release(230);
+      Keyboard.press(54); //top row 6
+      delay(30);
+      Keyboard.release(54);
       Keyboard.end();
        } else {
         Keyboard.end();
        } 
     }
   }
-  
+
+//Commented out some shortcuts, can't tell if causing input lag or not... maybe it's just my terrible sdvx skills
+/*  // Press Start + Btn1 to send Numpad 9
+if (Button1State != old_Button1State) { //compare the button states (from StateChangeDetection Example)
+  if (digitalRead(5) == LOW) { //if Btn1 is pressed
+      if (digitalRead(4) == LOW){ // if start button is pressed
+      Keyboard.begin();
+      Keyboard.press(233); //numpad_9
+      delay(30);
+      Keyboard.release(233);
+      Keyboard.end();
+       } else {
+        Keyboard.end();
+       } 
+    }
+  }
+
+    // Press Start + Btn2 to send Numpad 3
+if (Button2State != old_Button2State) { //compare the button states (from StateChangeDetection Example)
+  if (digitalRead(6) == LOW) { //if Btn6 is pressed
+      if (digitalRead(4) == LOW){ // if start button is pressed
+      Keyboard.begin();
+      Keyboard.press(227); //numpad_3
+      delay(30);
+      Keyboard.release(227);
+      Keyboard.end();
+       } else {
+        Keyboard.end();
+       } 
+    }
+  }
+*/
 // ****************Change your PIN here using the ascii table above**************************
 
 if (digitalRead(4) == HIGH) {
  if (macroButtonState != old_macroButtonState) {  //compare the button states (from StateChangeDetection Example)
    if (digitalRead(macropin) == LOW) {  //if macro button is pressed
    Keyboard.begin();
-   Keyboard.press(223); //numpad + (triggers card scan)
-   delay(40);
-   Keyboard.release(223);
-   delay(40);
-   Keyboard.press(226);//numpad 2
-   delay(40);
-   Keyboard.release(226);
-   delay(40);
-   Keyboard.press(230); //numpad 6
-   delay(40);
-   Keyboard.release(230);
-   delay(40);
-   Keyboard.press(233); //numpad 9
-   delay(40);
-   Keyboard.release(233);
-   delay(40);
-   Keyboard.press(228); //numpad 4
-   delay(40);
-   Keyboard.release(228);
+   Keyboard.press(8); //backspace (triggers card scan)
+   delay(300);
+   Keyboard.release(8);
+   delay(30);
+   Keyboard.press(49);//toprow 1
+   delay(30);
+   Keyboard.release(49);
+   delay(30);
+   Keyboard.press(50); //toprow 2
+   delay(30);
+   Keyboard.release(50);
+   delay(30);
+   Keyboard.press(51); //toprow 3
+   delay(30);
+   Keyboard.release(51);
+   delay(30);
+   Keyboard.press(52); //toprow 4
+   delay(30);
+   Keyboard.release(52);
    Keyboard.end();// end keyboard
    } else {
   Keyboard.end();
@@ -177,9 +233,9 @@ int state=0;
 if (state != old_state) {
  if (state == 7) {
   Keyboard.begin();
-  Keyboard.press(220); //Numpad_divide
+  Keyboard.press(61); //Top row equals
   delay(40);
-  Keyboard.release(220);
+  Keyboard.release(61);
   Keyboard.end();
  } else {
   Keyboard.end();
@@ -190,6 +246,8 @@ if (state != old_state) {
 old_macroButtonState = macroButtonState; // save the current state as the last state, for next time through the loop
 old_startButtonState = startButtonState; // save the current state as the last state, for next time through the loop
 old_state = state;
+old_Button1State = Button1State;
+old_Button2State = Button2State;
 
     
   
@@ -210,4 +268,3 @@ old_state = state;
   iivx.setState(&report);
   delayMicroseconds(REPORT_DELAY);
 }
-
