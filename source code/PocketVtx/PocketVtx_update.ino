@@ -113,8 +113,7 @@ void keyboard_mode() {
     // if there's a difference in encoder movement from last pass, move the mouse
     if(knob1 < old_knob1)
     {
-      Mouse.move(-1
-      5, 0);
+      Mouse.move(-15, 0);
     }
     else
     {
